@@ -1,15 +1,19 @@
+import ExpenseDate from './ExpenseDate';
+import ExpenseDetails from './ExpenseDetails';
 import './ExpenseItem.css';
 
 function ExpenseItem(probs) {
+    const DeleteItems = () =>
+    {
+        console.log('Delete')
+    }
     
     return <div className='expense-item'>
-        <div>{probs.date.toISOString()}</div>
-        <div className='expense-item_description'>
-            <h2>{probs.title}</h2>
-            <div className='expense-item_price'>${probs.amount}</div>
-            <div className='expense-item_location'>{probs.location}</div>
-        </div>
-    </div> 
+        <ExpenseDate date={probs.date}/>
+        <ExpenseDetails amount={probs.amount}  location={probs.location}   title={probs.title} />
+        <button onClick={DeleteItems}>Delete Expenses</button>
+
+</div>
 
 }
 
