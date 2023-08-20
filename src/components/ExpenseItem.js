@@ -1,17 +1,20 @@
+import React,{ useState } from 'react'
 import ExpenseDate from './ExpenseDate';
 import ExpenseDetails from './ExpenseDetails';
 import './ExpenseItem.css';
 
 function ExpenseItem(probs) {
-    const DeleteItems = () =>
+    const [amount,setAmount]=useState(probs.amount)
+    const expenseChange= () =>
     {
-        console.log('Delete')
+        setAmount('100')
+        console.log('amount')
     }
     
     return <div className='expense-item'>
         <ExpenseDate date={probs.date}/>
-        <ExpenseDetails amount={probs.amount}  location={probs.location}   title={probs.title} />
-        <button onClick={DeleteItems}>Delete Expenses</button>
+        <ExpenseDetails amount={amount}  location={probs.location}   title={probs.title} />
+        <button onClick={expenseChange}>changes expense</button>
 
 </div>
 
