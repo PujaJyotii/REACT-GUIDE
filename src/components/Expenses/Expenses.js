@@ -1,8 +1,8 @@
 import React,{ useState } from 'react'
-import ExpenseItem from './ExpenseItem'
 import './Expenses.css'
 import ExpensesFilter from './ExpensesFilter'
 import Card from '../UI/Card'
+import ExpensesList from './ExpensesList'
 
 
 const Expenses = (probs) =>
@@ -17,17 +17,7 @@ const Expenses = (probs) =>
     return (
         <Card className='expenses'>
          <ExpensesFilter selected={filteredYear} onChangeFilter={filterChangeHandler} />  
-         {filteredExpenses.length ===0 && <p>No Data Is Present.</p>}
-         {filteredExpenses.length ===1 && <p>Only single Expense here. Please add more...</p>} 
-         {filteredExpenses.length > 0 &&
-         filteredExpenses.map((expense) => (
-                <ExpenseItem 
-                key={expense.id}
-                title={expense.title}
-                amount={expense.amount}
-                date={expense.date} 
-                 />
-         ))} 
+         <ExpensesList items={filteredExpenses}/>
         </Card>
     )
 

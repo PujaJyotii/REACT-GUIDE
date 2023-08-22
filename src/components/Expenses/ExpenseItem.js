@@ -8,12 +8,13 @@ import Card from '../UI/Card';
 function ExpenseItem(probs) {
     
     
-    return <Card className='expense-item'>
+    return <li>
+    <Card className='expense-item'>
         <ExpenseDate date={probs.date}/>
         <ExpenseDetails amount={probs.amount}  location={probs.location}   title={probs.title} />
         
 
-</Card>
+</Card></li>
 
 }
 
