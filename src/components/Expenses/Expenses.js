@@ -18,6 +18,7 @@ const Expenses = (probs) =>
         <Card className='expenses'>
          <ExpensesFilter selected={filteredYear} onChangeFilter={filterChangeHandler} />  
          {filteredExpenses.length ===0 && <p>No Data Is Present.</p>}
+         {filteredExpenses.length ===1 && <p>Only single Expense here. Please add more...</p>} 
          {filteredExpenses.length > 0 &&
          filteredExpenses.map((expense) => (
                 <ExpenseItem 
