@@ -62,7 +62,8 @@ return ( <form onSubmit={submitHandler}>
             <input type='date' value={enteredDate} min='2019-01-01'  max='2022-12-31' onChange={dateChangeHandler}/>
         </div>
         <div className='new-expense_action'>
-            <button>Add Expense</button>
+            <button type='button' onClick={probs.onCancel}>Cancel</button>
+            <button type='submit'>Add Expense</button>
         </div>
     </div>
 </form>
